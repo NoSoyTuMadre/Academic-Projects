@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+    <!-- Catch all category -->
+    
+    <category>
+        <pattern>*</pattern>
+        <template>I don't understand. Please retype your response.</template>
+    </category>
+    
+    <!-- GREATER THAN OR EQUAL TO-->
+    <category>
+        <pattern>XGE <set>number</set> XS <set>number</set></pattern>
+        <template>
+            <think><set var="matched"><srai>XEQ <star/> XS <star index="2"/></srai></set></think>
+            <condition var="matched">
+                <li value="TRUE">TRUE</li>
+                <li><srai>XGT <star/> XS <star index="2"/></srai></li>
+            </condition>
+        </template>
+    </category>
+    
+    <!-- STRING EQUALS-->
+    <category>
+        <pattern>XEQ * XS *</pattern>
+        <template>
+            <learn>
+                <category>
+                    <pattern>
+                        <eval><uppercase>XFALSE <star/></uppercase></eval>
+                    </pattern>
+                    <template>TRUE</template>
+                </category>
+            </learn>
+            <srai>XFALSE <star index="2"/></srai>
+            <learn>
+                <category>
+                    <pattern>
+                        <eval><uppercase>XFALSE <star/></uppercase></eval>
+                    </pattern>
+                    <template>FALSE</template>
+                </category>
+            </learn>
+        </template>
+    </category>
+    
+    <!-- FALSE-->
+    <category>
+        <pattern>XFALSE *</pattern>
+        <template>FALSE</template>
+    </category>
+    
+    <!-- MAXIMUM NUMBER -->
+    <category>
+        <pattern>XMAX *</pattern>
+        <template><star index="1"/></template>
+    </category>    
+    
+    <category>
+        <pattern>XMAX * *</pattern>
+        <template>
+            <srai>XXMAX <star index="2"/> XS <star index="1" /></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>XXMAX *  XS *</pattern>
+        <template>
+            <think><set var="matched"><srai>XGE <star index="1" /> XS <star index="2" /></srai></set></think>
+            <condition var="matched">
+                <li value="TRUE"><star index="1" /></li>
+                <li><star index="2"/></li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>XXMAX * * XS *</pattern>
+        <template>
+            <think><set var="matched"><srai>XGE <star/> XS <star index="3"/></srai></set></think>
+            <condition var="matched">
+                <li value="TRUE"><srai>XXMAX <star index="2"/> XS <star/></srai></li>
+                <li><srai>XXMAX <star index="2"/> XS <star index="3"/></srai></li>
+            </condition>
+        </template>
+    </category>
+    
+    <!-- Random sayings -->
+    
+    <category>
+        <pattern>HI #</pattern>
+        <template>Hello. My name is Brooke with the Computer Science department at Fields University. 
+        I am your virtual career advisor. If you seek advice on career options, please type <b>CAREER.</b></template>
+    </category>
+    
+    <category>
+        <pattern>HELLO #</pattern>
+        <template><srai>HI #</srai></template>
+    </category>
+    
+    <category>
+        <pattern>HEY #</pattern>
+        <template><srai>HI #</srai></template>
+    </category>
+    
+    <category>
+        <pattern>HOWDY #</pattern>
+        <template><srai>HI #</srai></template>
+    </category>
+    
+    <category>
+        <pattern>BYE #</pattern>
+        <template>It was my pleasure to assist you today. I hope to see you again soon. Goodbye 
+        <condition name="username">
+            <li value="#">, <get name="username"/>. </li>
+            <li>. </li>
+        </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>GOODBYE #</pattern>
+        <template><srai>BYE #</srai></template>
+    </category>
+    
+    
+    <!-- Categories to start the career assessment -->
+    
+    <category>
+        <pattern>CAREER</pattern>
+        <template>
+            <think><set name="topic">assessment</set></think>
+            I will ask you a series of questions that will assist me in providing you with career options 
+            that best suits you. Are you ready to begin?
+        </template>
+    </category>
+    
+    <topic name = "assessment">
+        <category>
+            <pattern>_</pattern>
+            <template>
+                <think><set name="score1">0</set></think>
+                <think><set name="score2">0</set></think>
+                <think><set name="score3">0</set></think>
+                <think><set name="score4">0</set></think>
+                <think><set name="score5">0</set></think>
+                <think><set name="score6">0</set></think>
+                <think><set name="score7">0</set></think>
+                <think><set name = "input"><star/></set></think>
+                <condition name = "input">
+                    
+                    <!-- USER SAYS YES -->
+                    <li value = "YES">
+                        <think><set name = "topic">start</set></think>
+                        <srai>QUESTION1</srai>
+                    </li>
+                    
+                    <!-- USER SAYS NO -->
+                    <li value = "NO">
+                        <set name = "topic"></set>
+                        Ok. What can I assist you with instead?
+                    </li>
+                    
+                    <!-- USER ENTERS SOMETHING BESIDES YES OR NO -->
+                    <li>Please enter YES or NO.</li>
+                    
+                </condition>
+            </template>
+        </category>
+    </topic>
+    
+    <topic name = "start">
+        
+        <!-- QUESTION 1 -->
+        <category>
+            <pattern>QUESTION1</pattern>
+            <template>
+            Ok. Let's begin.<split/>
+            Your friends would describe you as...<split/>
+            <think><set name = "topic">QuestionOne</set></think>
+                <button>
+                    <text>Skeptical</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Empathetic</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>A Storyteller</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>A Problem-Solver</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>A Leader</text>
+                    <postback></postback>
+                </button>
+            </template>
+        </category>
+        
+        <!-- QUESTION 1 -> SET SCORE -->
+        <topic name = "QuestionOne">
+        <category>
+            <pattern>_</pattern>
+            <template>
+                <think><set name = "topic">start</set>
+                <set name = "choice"><star/></set></think>
+                <condition name = "choice">
+                    <li value = "Skeptical"><srai>TWOPOINT QUESTION2</srai></li>
+                    <li value = "Empathetic"><srai>SIXPOINT QUESTION2</srai></li>
+                    <li value = "A Storyteller"><srai>THREEPOINT QUESTION2</srai></li>
+                    <li value = "A Problem dash Solver"><srai>ONEPOINT</srai><srai>FOURPOINT</srai><srai>SEVENPOINT QUESTION2</srai></li>
+                    <li value = "A Leader"><srai>FIVEPOINT QUESTION2</srai></li>
+                </condition>
+            </template>
+        </category>
+        </topic>
+
+        <!-- QUESTION 2 -->
+        <category>
+            <pattern>QUESTION2</pattern>
+            <template>
+            When it comes to your finished work product, what's most important?<split/>
+                <think><set name = "topic">QuestionTwo</set></think>
+                <button>
+                    <text>Accuracy - you aim for correctness</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Solving a problem - you want people to benefit from your work</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Beauty - you want your work to look amazing</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Functionality - you want your product to work exceptionally well for users</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Publicity - you want everyone to know about your work</text>
+                    <postback></postback>
+                </button>
+            </template>
+        </category>
+        
+        <!-- QUESTION 2 -> SET SCORE -->
+        <topic name = "QuestionTwo">
+        <category>
+            <pattern>_</pattern>
+            <template>
+                <think><set name = "topic">start</set>
+                <set name = "choice"><star/></set></think>
+                <condition name = "choice">
+                    <li value = "Accuracy dash you aim for correctness"><srai>TWOPOINT</srai><srai>SEVENPOINT QUESTION3</srai></li>
+                    <li value = "Solving a problem dash you want people to benefit from your work"><srai>ONEPOINT</srai><srai>FOURPOINT QUESTION3</srai></li>
+                    <li value = "Beauty dash you want your work to look amazing"><srai>THREEPOINT QUESTION3</srai></li>
+                    <li value = "Functionality dash you want your product to work exceptionally well for users"><srai>SIXPOINT QUESTION3</srai></li>
+                    <li value = "Publicity dash you want everyone to know about your work"><srai>FIVEPOINT QUESTION3</srai></li>
+                </condition>
+            </template>
+        </category>
+        </topic>
+        
+        <!-- QUESTION 3 -->
+        <category>
+            <pattern>QUESTION3</pattern>
+            <template>
+            What was your favorite subject in high school?<split/>
+            <think><set name = "topic">QuestionThree</set></think>
+                <button>
+                    <text>Math</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>History</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Art</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>English</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Business</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Science</text>
+                    <postback></postback>
+                </button>
+            </template>
+        </category>
+        
+        <!-- QUESTION 3 -> SET SCORE -->
+        <topic name = "QuestionThree">
+        <category>
+            <pattern>_</pattern>
+            <template>
+                <think><set name = "topic">start</set>
+                <set name = "choice"><star/></set></think>
+                <condition name = "choice">
+                    <li value = "Math"><srai>ONEPOINT QUESTION4</srai></li>
+                    <li value = "History"><srai>SEVENPOINT QUESTION4</srai></li>
+                    <li value = "Art"><srai>THREEPOINT QUESTION4</srai></li>
+                    <li value = "English"><srai>TWOPOINT QUESTION4</srai></li>
+                    <li value = "Business"><srai>FIVEPOINT QUESTION4</srai></li>
+                    <li value = "Science"><srai>FOURPOINT</srai><srai>SIXPOINT QUESTION4</srai></li>
+                </condition>
+            </template>
+        </category>
+        </topic>
+        
+        <!-- QUESTION 4 -->
+        <category>
+            <pattern>QUESTION4</pattern>
+            <template>
+            Excel spreadsheets or databases make you feel...<split/>
+            <think><set name = "topic">QuestionFour</set></think>
+                <button>
+                    <text>Excited: You're all about that INDEX MATCH.</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Dreadful: Please, no Excel!</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Curious: You don't have much experience with it, but would be interested in learning more about it!</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Over it: Let's ditch Excel and build an app instead.</text>
+                    <postback></postback>
+                </button>
+            </template>
+        </category>
+        
+        <!-- QUESTION 4 -> SET SCORE -->
+        <topic name = "QuestionFour">
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <think><set name = "topic">start</set>
+                <set name = "choice"><star/></set></think>
+                <condition name = "choice">
+                    <li value = "Excited you are all about that INDEX MATCH"><srai>SEVENPOINT QUESTION5</srai></li>
+                    <li value = "Dreadful please, no Excel"><srai>FIVEPOINT QUESTION5</srai></li>
+                    <li value = "Curious you do not have much experience with it, but would be interested in learning more about it"><srai>TWOPOINT</srai><srai>FOURPOINT</srai><srai>SIXPOINT QUESTION5</srai></li>
+                    <li value = "Over it let us ditch Excel and build an app instead"><srai>ONEPOINT</srai><srai>THREEPOINT QUESTION5</srai></li>
+                </condition>
+            </template>
+        </category>
+        </topic>
+        
+        <!-- QUESTION 5 -->
+        <category>
+            <pattern>QUESTION5</pattern>
+            <template>
+            What's your favorite type of project?<split/>
+            <think><set name = "topic">QuestionFive</set></think>
+                <button>
+                    <text>Making a diorama/art project</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Writing a research paper</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Preparing or giving a presentation</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Automating workflows/making something work</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Planning a new program initiative or organizing a discussion group</text>
+                    <postback></postback>
+                </button>
+            </template>
+        </category>
+        
+        <!-- QUESTION 5 -> SET SCORE -->
+        <topic name = "QuestionFive">
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <think><set name = "topic">start</set>
+                <set name = "choice"><star/></set></think>
+                <condition name = "choice">
+                    <li value = "Making a diorama slash art project"><srai>THREEPOINT QUESTION6</srai></li>
+                    <li value = "Writing a research paper"><srai>SEVENPOINT QUESTION6</srai></li>
+                    <li value = "Preparing or giving a presentation"><srai>FIVEPOINT QUESTION6</srai></li>
+                    <li value = "Automating workflows slash making something work"><srai>ONEPOINT</srai><srai>FOURPOINT</srai><srai>SIXPOINT QUESTION6</srai></li>
+                    <li value = "Planning a new program initiative or organizing a discussion group"><srai>TWOPOINT QUESTION6</srai></li>
+                </condition>
+            </template>
+        </category>
+        </topic>
+        
+        <!-- QUESTION 6 -->
+        <category>
+            <pattern>QUESTION6</pattern>
+            <template>
+            How do you prefer to work on a project?<split/>
+            <think><set name = "topic">QuestionSix</set></think>
+                <button>
+                    <text>Independently, on longer projects that require intense focus</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Contributing information to help a team project</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Crowd-sourcing and gathering group feedback, but working mostly on your own</text>
+                    <postback></postback>
+                </button>
+            </template>
+        </category>
+        
+        <!-- QUESTION 6 -> SET SCORE -->
+        <topic name = "QuestionSix">
+        <category>
+            <pattern>_</pattern>
+            <template>
+                <think><set name = "topic">start</set>
+                <set name = "choice"><star/></set></think>
+                <condition name = "choice">
+                    <li value = "Independently, on longer projects that require intense focus"><srai>ONEPOINT</srai><srai>THREEPOINT QUESTION7</srai></li>
+                    <li value = "Contributing information to help a team project"><srai>FOURPOINT</srai><srai>SIXPOINT QUESTION7</srai></li>
+                    <li value = "Crowd dash sourcing and gathering group feedback, but working mostly on your own"><srai>TWOPOINT</srai><srai>FIVEPOINT</srai><srai>SEVENPOINT QUESTION7</srai></li>
+                </condition>
+            </template>
+        </category>
+        </topic>
+        
+        <!-- QUESTION 7 -->
+        <category>
+            <pattern>QUESTION7</pattern>
+            <template>
+            How do you make important decisions?<split/>
+            <think><set name = "topic">QuestionSeven</set></think>
+                <button>
+                    <text>After careful analysis</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>After checking with friends and colleagues</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>You weigh your options and base decisions off of current information available</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>After creating a poll and asking your social media followers</text>
+                    <postback></postback>
+                </button>
+            </template>
+        </category>
+        
+        <!-- QUESTION 7 -> SET SCORE -->
+        <topic name = "QuestionSeven">
+        <category>
+            <pattern>_</pattern>
+            <template>
+                <think><set name = "topic">start</set>
+                <set name = "choice"><star/></set></think>
+                <condition name = "choice">
+                    <li value = "After careful analysis"><srai>ONEPOINT</srai><srai>TWOPOINT</srai><srai>SIXPOINT QUESTION8</srai></li>
+                    <li value = "After checking with friends and colleagues"><srai>THREEPOINT</srai><srai>FOURPOINT QUESTION8</srai></li>
+                    <li value = "You weigh your options and base decisions off of current information available"><srai>SEVENPOINT QUESTION8</srai></li>
+                    <li value = "After creating a poll and asking your social media followers"><srai>FIVEPOINT QUESTION8</srai></li>
+                </condition>
+            </template>
+        </category>
+        </topic>
+        
+        <!-- QUESTION 8 -->
+        <category>
+            <pattern>QUESTION8</pattern>
+            <template>
+            What is your favorite type of programming language?<split/>
+            <think><set name = "topic">QuestionEight</set></think>
+                <button>
+                    <text>A scripting language like Python or JavaScript</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>A compiled language like Java, C++, or Go</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>A front end language like HTML or CSS</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>I don't have one, and I'm not really interested in learning one.</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>I don't have one, but I'm definitely interested in learning more about them.</text>
+                    <postback></postback>
+                </button>
+            </template>
+        </category>
+        
+        <!-- QUESTION 8 -> SET SCORE -->
+        <topic name = "QuestionEight">
+        <category>
+            <pattern>_</pattern>
+            <template>
+                <think><set name = "topic">start</set>
+                <set name = "choice"><star/></set></think>
+                <condition name = "choice">
+                    <li value = "A scripting language like Python or JavaScript"><srai>SEVENPOINT QUESTION9</srai></li>
+                    <li value = "A compiled language like Java, C plus  plus , or Go"><srai>ONEPOINT</srai><srai>TWOPOINT</srai><srai>SIXPOINT QUESTION9</srai></li>
+                    <li value = "A front end language like HTML or CSS"><srai>THREEPOINT QUESTION9</srai></li>
+                    <li value = "I do not have one, and I am not really interested in learning one"><srai>FIVEPOINT QUESTION9</srai></li>
+                    <li value = "I do not have one, but I am definitely interested in learning more about them"><srai>FOURPOINT QUESTION9</srai></li>
+                </condition>
+            </template>
+        </category>
+        </topic>
+        
+        <!-- QUESTION 9 -->
+        <category>
+            <pattern>QUESTION9</pattern>
+            <template>
+            What's most important to you in your career?<split/>
+            <think><set name = "topic">QuestionNine</set></think>
+                <button>
+                    <text>Salary</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Autonomy</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Flexibility</text>
+                    <postback></postback>
+                </button>
+                <button>
+                    <text>Creativity</text>
+                    <postback></postback>
+                </button>
+            </template>
+        </category>
+        
+        <!-- QUESTION 9 -> SET SCORE -->
+        <topic name = "QuestionNine">
+        <category>
+            <pattern>_</pattern>
+            <template>
+                <think><set name = "topic">start</set>
+                <set name = "choice"><star/></set></think>
+                <condition name = "choice">
+                    <li value = "Salary"><srai>SEVENPOINT RESULTS</srai></li>
+                    <li value = "Autonomy"><srai>ONEPOINT RESULTS</srai></li>
+                    <li value = "Flexibility"><srai>SIXPOINT</srai><srai>FOURPOINT</srai><srai>TWOPOINT RESULTS</srai></li>
+                    <li value = "Creativity"><srai>FIVEPOINT</srai><srai>THREEPOINT RESULTS</srai></li>
+                </condition>
+            </template>
+        </category>
+        </topic>
+        
+        
+        <!-- Check scores to determine career choice -->
+    
+        <category>
+        <pattern>RESULTS</pattern>
+            <template>
+                <think>
+                    <set name = "biggestnumber"><srai>XMAX <get name = "score1"/> <get name = "score2"/></srai></set>
+                    <set name = "biggestnumber"><srai>XMAX <get name = "biggestnumber"/> <get name = "score3"/></srai></set>
+                    <set name = "biggestnumber"><srai>XMAX <get name = "biggestnumber"/> <get name = "score4"/></srai></set>
+                    <set name = "biggestnumber"><srai>XMAX <get name = "biggestnumber"/> <get name = "score5"/></srai></set>
+                    <set name = "biggestnumber"><srai>XMAX <get name = "biggestnumber"/> <get name = "score6"/></srai></set>
+                    <set name = "biggestnumber"><srai>XMAX <get name = "biggestnumber"/> <get name = "score7"/></srai></set>
+                    <set name = "A"><srai>XGE <get name = "score1"/> XS <get name = "biggestnumber"/></srai></set>
+                    <set name = "B"><srai>XGE <get name = "score2"/> XS <get name = "biggestnumber"/></srai></set>
+                    <set name = "C"><srai>XGE <get name = "score3"/> XS <get name = "biggestnumber"/></srai></set>
+                    <set name = "D"><srai>XGE <get name = "score4"/> XS <get name = "biggestnumber"/></srai></set>
+                    <set name = "E"><srai>XGE <get name = "score5"/> XS <get name = "biggestnumber"/></srai></set>
+                    <set name = "F"><srai>XGE <get name = "score6"/> XS <get name = "biggestnumber"/></srai></set>
+                    <set name = "G"><srai>XGE <get name = "score7"/> XS <get name = "biggestnumber"/></srai></set>
+                </think>
+            	<condition name="A">
+            		<li value="TRUE"><srai>1</srai></li>
+            	</condition>
+            	<condition name="B">
+            		<li value="TRUE"><srai>2</srai></li>
+            	</condition>
+                <condition name="C">
+                	<li value="TRUE"><srai>3</srai></li>
+                </condition>
+                <condition name="D">
+                    <li value="TRUE"><srai>4</srai></li>
+                </condition>
+                <condition name="E">
+                    <li value="TRUE"><srai>5</srai></li>
+                </condition>
+                <condition name="F">
+                    <li value="TRUE"><srai>6</srai></li>
+                </condition>
+                <condition name="G">
+                    <li value="TRUE"><srai>7</srai></li>
+                </condition>
+            </template>
+        </category>
+    
+    
+        <!-- Different outcomes of the test -->
+    
+        <category>
+        <pattern>1</pattern>
+        <template>
+            Considering your responses, I think a career as a <map name="career">score1</map> would best suit you.
+            <split/>
+            According to betterteam.com, also known as Software Engineers or Systems Programmers, Computer Programmers are tasked with designing and creating software programs, 
+            integrating systems and software, training end-users, analyzing algorithms, modifying source-code, writing system instructions, debugging, and maintaining operating systems.
+            To learn more about this position, visit 
+            <link>
+                <text>O*NET OnLine: 15-1199.01 - Software Quality Assurance Engineers and Testers</text>
+                <url>https://www.onetonline.org/link/summary/15-1199.01</url>
+            </link>
+            <split/>
+            In the end, it is up to you what career that you choose. I hope that I have been of assistance to you <get name = "username"/>.<split/>
+            Do you need any additional assistance?
+            <think><set name="topic">assistance</set></think>
+        </template>
+        </category>
+        
+        <category>
+        <pattern>2</pattern>
+        <template>
+            Considering your responses, I think a career as a <map name="career">score2</map> would best suit you.
+            <split/>
+            According to betterteam.com, a Software Tester is responsible for designing test scenarios for software usability, running these tests, and preparing reports on the 
+            effectiveness and defects to the production team. A Software Tester is also known as a Software Test Engineer or a Quality Assurance (QA) Tester.
+            To learn more about this position, visit 
+            <link>
+                <text>O*NET OnLine: 15-1131.00 - Computer Programmers</text>
+                <url>https://www.onetonline.org/link/summary/15-1131.00</url>
+            </link>
+            <split/>
+            In the end, it is up to you what career that you choose. I hope that I have been of assistance to you <get name = "username"/>.<split/>
+            Do you need any additional assistance?
+            <think><set name="topic">assistance</set></think>
+        </template>
+        </category>
+        
+        <category>
+        <pattern>3</pattern>
+        <template>
+            Considering your responses, I think a career as a <map name="career">score3</map> would best suit you.
+            <split/>
+            According to betterteam.com, web developers design and build websites. They are typically responsible for the appearance, of the site and technical aspects, such as site speed and how much traffic 
+            the site can handle. Web developers may also create site content that requires technical features.
+            To learn more about this position, visit 
+            <link>
+                <text>O*NET OnLine: 15-1134.00 - Web Developers</text>
+                <url>https://www.onetonline.org/link/summary/15-1134.00</url>
+            </link>
+            <split/>
+            In the end, it is up to you what career that you choose. I hope that I have been of assistance to you <get name = "username"/>.<split/>
+            Do you need any additional assistance?
+            <think><set name="topic">assistance</set></think>
+        </template>
+        </category>
+        
+        <category>
+        <pattern>4</pattern>
+        <template>
+            Considering your responses, I think a career as a <map name="career">score4</map> would best suit you.
+            <split/>
+            According to betterteam.com, system Administrators, or SysAdmins, are responsible for setting up and maintaining computer systems. They ensure that computers in the company's network, especially the server, 
+            run smoothly and securely.
+            To learn more about this position, visit 
+            <link>
+                <text>O*NET OnLine: 15-1142.00 - Network and Computer Systems Administrators</text>
+                <url>https://www.onetonline.org/link/summary/15-1142.00</url>
+            </link>
+            <split/>
+            In the end, it is up to you what career that you choose. I hope that I have been of assistance to you <get name = "username"/>.<split/>
+            Do you need any additional assistance?
+            <think><set name="topic">assistance</set></think>
+        </template>
+        </category>
+        
+        <category>
+        <pattern>5</pattern>
+        <template>
+            Considering your responses, I think a career as a <map name="career">score5</map> would best suit you.
+            <split/>
+            According to betterteam.com, Digital Marketing Managers are in charge of planning and managing marketing campaigns that promote a company’s brand, products, and services. Their duties include planning campaigns, 
+            analyzing metrics, and identifying trends. They typically have experience in art direction and social media.
+            To learn more about this position, visit 
+            <link>
+                <text>O*NET OnLine: 15-1199.10 - Search Marketing Strategists</text>
+                <url>https://www.onetonline.org/link/summary/15-1199.10</url>
+            </link>
+            <split/>
+            In the end, it is up to you what career that you choose. I hope that I have been of assistance to you <get name = "username"/>.<split/>
+            Do you need any additional assistance?
+            <think><set name="topic">assistance</set></think>
+        </template>
+        </category>
+        
+        <category>
+        <pattern>6</pattern>
+        <template>
+            Considering your responses, I think a career as a <map name="career">score6</map> would best suit you.
+            According to betterteam.com, Embedded Software Engineers are responsible for developing and implementing software for embedded systems such as routers, smartwatches, televisions, and hybrid vehicles. They are involved 
+            in the complete life-cycle of the embedded software product, from building the code through to final testing and device implementation.
+            <split/>
+            To learn more about this position, visit 
+            <link>
+                <text>O*NET OnLine: 17-2061.00 - Computer Hardware Engineers</text>
+                <url>https://www.onetonline.org/link/summary/17-2061.00</url>
+            </link>
+            <split/>
+            In the end, it is up to you what career that you choose. I hope that I have been of assistance to you <get name = "username"/>.<split/>
+            Do you need any additional assistance?
+            <think><set name="topic">assistance</set></think>
+        </template>
+        </category>
+        
+        <category>
+        <pattern>7</pattern>
+        <template>
+            Considering your responses, I think a career as a <map name="career">score7</map> would best suit you.
+            <split/>
+            According to betterteam.com, a Data Analyst collects and stores data on sales numbers, market research, logistics, linguistics, or other behaviors. They bring technical expertise to ensure the quality and accuracy of 
+            that data, then process, design and present it in ways to help people, businesses, and organizations make better decisions.
+            To learn more about this position, visit 
+            <link>
+                <text>O*NET OnLine: 15-1199.08 - Business Intelligence Analysts</text>
+                <url>https://www.onetonline.org/link/summary/15-1199.08</url>
+            </link>
+            <split/>
+            In the end, it is up to you what career that you choose. I hope that I have been of assistance to you <get name = "username"/>.<split/>
+            Do you need any additional assistance?
+            <think><set name="topic">assistance</set></think>
+        </template>
+        </category>
+    
+    
+        <!-- Increase the score by one -->
+        
+        <category>
+            <pattern>ONEPOINT</pattern>
+            <template>
+                <condition name="score1"> 
+            		<li value="8"><think><set name="score1">9</set></think></li>
+            		<li value="7"><think><set name="score1">8</set></think></li>
+            		<li value="6"><think><set name="score1">7</set></think></li>
+            		<li value="5"><think><set name="score1">6</set></think></li>
+            		<li value="4"><think><set name="score1">5</set></think></li>
+            		<li value="3"><think><set name="score1">4</set></think></li>
+            		<li value="2"><think><set name="score1">3</set></think></li>
+            		<li value="1"><think><set name="score1">2</set></think></li>
+            		<li value="0"><think><set name="score1">1</set></think></li>
+            	</condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>ONEPOINT *</pattern>
+            <template>
+                <condition name="score1"> 
+            		<li value="8"><think><set name="score1">9</set></think><srai><star/></srai></li>
+            		<li value="7"><think><set name="score1">8</set></think><srai><star/></srai></li>
+            		<li value="6"><think><set name="score1">7</set></think><srai><star/></srai></li>
+            		<li value="5"><think><set name="score1">6</set></think><srai><star/></srai></li>
+            		<li value="4"><think><set name="score1">5</set></think><srai><star/></srai></li>
+            		<li value="3"><think><set name="score1">4</set></think><srai><star/></srai></li>
+            		<li value="2"><think><set name="score1">3</set></think><srai><star/></srai></li>
+            		<li value="1"><think><set name="score1">2</set></think><srai><star/></srai></li>
+            		<li value="0"><think><set name="score1">1</set></think><srai><star/></srai></li>
+            	</condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>TWOPOINT</pattern>
+            <template>
+                <condition name="score2"> 
+            		<li value="8"><think><set name="score2">9</set></think></li>
+            		<li value="7"><think><set name="score2">8</set></think></li>
+            		<li value="6"><think><set name="score2">7</set></think></li>
+            		<li value="5"><think><set name="score2">6</set></think></li>
+            		<li value="4"><think><set name="score2">5</set></think></li>
+            		<li value="3"><think><set name="score2">4</set></think></li>
+            		<li value="2"><think><set name="score2">3</set></think></li>
+            		<li value="1"><think><set name="score2">2</set></think></li>
+            		<li value="0"><think><set name="score2">1</set></think></li>
+            	</condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>TWOPOINT *</pattern>
+            <template>
+                <condition name="score2"> 
+            		<li value="8"><think><set name="score2">9</set></think><srai><star/></srai></li>
+            		<li value="7"><think><set name="score2">8</set></think><srai><star/></srai></li>
+            		<li value="6"><think><set name="score2">7</set></think><srai><star/></srai></li>
+            		<li value="5"><think><set name="score2">6</set></think><srai><star/></srai></li>
+            		<li value="4"><think><set name="score2">5</set></think><srai><star/></srai></li>
+            		<li value="3"><think><set name="score2">4</set></think><srai><star/></srai></li>
+            		<li value="2"><think><set name="score2">3</set></think><srai><star/></srai></li>
+            		<li value="1"><think><set name="score2">2</set></think><srai><star/></srai></li>
+            		<li value="0"><think><set name="score2">1</set></think><srai><star/></srai></li>
+            	</condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>THREEPOINT</pattern>
+            <template>
+                <condition name="score3"> 
+            		<li value="8"><think><set name="score3">9</set></think></li>
+            		<li value="7"><think><set name="score3">8</set></think></li>
+            		<li value="6"><think><set name="score3">7</set></think></li>
+            		<li value="5"><think><set name="score3">6</set></think></li>
+            		<li value="4"><think><set name="score3">5</set></think></li>
+            		<li value="3"><think><set name="score3">4</set></think></li>
+            		<li value="2"><think><set name="score3">3</set></think></li>
+            		<li value="1"><think><set name="score3">2</set></think></li>
+            		<li value="0"><think><set name="score3">1</set></think></li>
+            	</condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>THREEPOINT *</pattern>
+            <template>
+                <condition name="score3"> 
+            		<li value="8"><think><set name="score3">9</set></think><srai><star/></srai></li>
+            		<li value="7"><think><set name="score3">8</set></think><srai><star/></srai></li>
+            		<li value="6"><think><set name="score3">7</set></think><srai><star/></srai></li>
+            		<li value="5"><think><set name="score3">6</set></think><srai><star/></srai></li>
+            		<li value="4"><think><set name="score3">5</set></think><srai><star/></srai></li>
+            		<li value="3"><think><set name="score3">4</set></think><srai><star/></srai></li>
+            		<li value="2"><think><set name="score3">3</set></think><srai><star/></srai></li>
+            		<li value="1"><think><set name="score3">2</set></think><srai><star/></srai></li>
+            		<li value="0"><think><set name="score3">1</set></think><srai><star/></srai></li>
+            	</condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>FOURPOINT</pattern>
+            <template>
+                <condition name="score4"> 
+            		<li value="8"><think><set name="score4">9</set></think></li>
+            		<li value="7"><think><set name="score4">8</set></think></li>
+            		<li value="6"><think><set name="score4">7</set></think></li>
+            		<li value="5"><think><set name="score4">6</set></think></li>
+            		<li value="4"><think><set name="score4">5</set></think></li>
+            		<li value="3"><think><set name="score4">4</set></think></li>
+            		<li value="2"><think><set name="score4">3</set></think></li>
+            		<li value="1"><think><set name="score4">2</set></think></li>
+            		<li value="0"><think><set name="score4">1</set></think></li>
+            	</condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>FOURPOINT *</pattern>
+            <template>
+                <condition name="score4"> 
+            		<li value="8"><think><set name="score4">9</set></think><srai><star/></srai></li>
+            		<li value="7"><think><set name="score4">8</set></think><srai><star/></srai></li>
+            		<li value="6"><think><set name="score4">7</set></think><srai><star/></srai></li>
+            		<li value="5"><think><set name="score4">6</set></think><srai><star/></srai></li>
+            		<li value="4"><think><set name="score4">5</set></think><srai><star/></srai></li>
+            		<li value="3"><think><set name="score4">4</set></think><srai><star/></srai></li>
+            		<li value="2"><think><set name="score4">3</set></think><srai><star/></srai></li>
+            		<li value="1"><think><set name="score4">2</set></think><srai><star/></srai></li>
+            		<li value="0"><think><set name="score4">1</set></think><srai><star/></srai></li>
+            	</condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>FIVEPOINT</pattern>
+            <template>
+                <condition name="score5"> 
+            		<li value="8"><think><set name="score5">9</set></think></li>
+            		<li value="7"><think><set name="score5">8</set></think></li>
+            		<li value="6"><think><set name="score5">7</set></think></li>
+            		<li value="5"><think><set name="score5">6</set></think></li>
+            		<li value="4"><think><set name="score5">5</set></think></li>
+            		<li value="3"><think><set name="score5">4</set></think></li>
+            		<li value="2"><think><set name="score5">3</set></think></li>
+            		<li value="1"><think><set name="score5">2</set></think></li>
+            		<li value="0"><think><set name="score5">1</set></think></li>
+            	</condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>FIVEPOINT *</pattern>
+            <template>
+                <condition name="score5"> 
+            		<li value="8"><think><set name="score5">9</set></think><srai><star/></srai></li>
+            		<li value="7"><think><set name="score5">8</set></think><srai><star/></srai></li>
+            		<li value="6"><think><set name="score5">7</set></think><srai><star/></srai></li>
+            		<li value="5"><think><set name="score5">6</set></think><srai><star/></srai></li>
+            		<li value="4"><think><set name="score5">5</set></think><srai><star/></srai></li>
+            		<li value="3"><think><set name="score5">4</set></think><srai><star/></srai></li>
+            		<li value="2"><think><set name="score5">3</set></think><srai><star/></srai></li>
+            		<li value="1"><think><set name="score5">2</set></think><srai><star/></srai></li>
+            		<li value="0"><think><set name="score5">1</set></think><srai><star/></srai></li>
+            	</condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>SIXPOINT</pattern>
+            <template>
+                <condition name="score6"> 
+            		<li value="8"><think><set name="score6">9</set></think></li>
+            		<li value="7"><think><set name="score6">8</set></think></li>
+            		<li value="6"><think><set name="score6">7</set></think></li>
+            		<li value="5"><think><set name="score6">6</set></think></li>
+            		<li value="4"><think><set name="score6">5</set></think></li>
+            		<li value="3"><think><set name="score6">4</set></think></li>
+            		<li value="2"><think><set name="score6">3</set></think></li>
+            		<li value="1"><think><set name="score6">2</set></think></li>
+            		<li value="0"><think><set name="score6">1</set></think></li>
+            	</condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>SIXPOINT *</pattern>
+            <template>
+                <condition name="score6"> 
+            		<li value="8"><think><set name="score6">9</set></think><srai><star/></srai></li>
+            		<li value="7"><think><set name="score6">8</set></think><srai><star/></srai></li>
+            		<li value="6"><think><set name="score6">7</set></think><srai><star/></srai></li>
+            		<li value="5"><think><set name="score6">6</set></think><srai><star/></srai></li>
+            		<li value="4"><think><set name="score6">5</set></think><srai><star/></srai></li>
+            		<li value="3"><think><set name="score6">4</set></think><srai><star/></srai></li>
+            		<li value="2"><think><set name="score6">3</set></think><srai><star/></srai></li>
+            		<li value="1"><think><set name="score6">2</set></think><srai><star/></srai></li>
+            		<li value="0"><think><set name="score6">1</set></think><srai><star/></srai></li>
+            	</condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>SEVENPOINT</pattern>
+            <template>
+                <condition name="score7"> 
+            		<li value="8"><think><set name="score7">9</set></think></li>
+            		<li value="7"><think><set name="score7">8</set></think></li>
+            		<li value="6"><think><set name="score7">7</set></think></li>
+            		<li value="5"><think><set name="score7">6</set></think></li>
+            		<li value="4"><think><set name="score7">5</set></think></li>
+            		<li value="3"><think><set name="score7">4</set></think></li>
+            		<li value="2"><think><set name="score7">3</set></think></li>
+            		<li value="1"><think><set name="score7">2</set></think></li>
+            		<li value="0"><think><set name="score7">1</set></think></li>
+            	</condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>SEVENPOINT *</pattern>
+            <template>
+                <condition name="score7"> 
+            		<li value="8"><think><set name="score7">9</set></think><srai><star/></srai></li>
+            		<li value="7"><think><set name="score7">8</set></think><srai><star/></srai></li>
+            		<li value="6"><think><set name="score7">7</set></think><srai><star/></srai></li>
+            		<li value="5"><think><set name="score7">6</set></think><srai><star/></srai></li>
+            		<li value="4"><think><set name="score7">5</set></think><srai><star/></srai></li>
+            		<li value="3"><think><set name="score7">4</set></think><srai><star/></srai></li>
+            		<li value="2"><think><set name="score7">3</set></think><srai><star/></srai></li>
+            		<li value="1"><think><set name="score7">2</set></think><srai><star/></srai></li>
+            		<li value="0"><think><set name="score7">1</set></think><srai><star/></srai></li>
+            	</condition>
+            </template>
+        </category>
+    </topic>
+
+    <topic name = "assistance">
+        <category>
+            <pattern>_</pattern>
+            <template>
+                <think><set name = "input"><star/></set></think>
+                <condition name = "input">
+                    <li value = "YES">
+                        <set name = "topic"></set>
+                        Ok. How can I help you?            
+                    </li>
+                    <li value = "NO">
+                        <set name = "topic"></set>
+                        <srai>BYE #</srai>
+                    </li>
+                    <li>Please enter YES or NO.</li>
+                </condition>
+            </template>
+        </category>
+    </topic>
+    
+        <!-- Random questions/greetings -->
+
+    <category>
+        <pattern>WHAT IS YOUR NAME</pattern>
+        <template>
+            <think><set name = "topic">names</set></think>
+            My name is Brooke, your virtual career advisor. What is your name?
+            </template>
+    </category>
+    
+    <category>
+        <pattern>WHAT IS *</pattern>
+        <template>
+            I'm sorry, but I don't know what <set name = "object"><star/></set> is. Will you please rephrase your question?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>WHATS *</pattern>
+        <template><srai>WHAT IS *</srai></template>
+    </category>
+        
+    <topic name="names">
+        <category>
+            <pattern>*</pattern>
+            <template>
+            <think><set name="username"><star/></set></think>
+            <star/>? That's a nice name.<split/>
+            Would you like to explore career options in the field of Computer Science?
+            <think><set name="topic">topic3</set></think>
+            </template>
+        </category>
+    </topic>
+    
+    <topic name="topic3">
+    <category>
+        <pattern>_</pattern>
+        <template>
+            <think><set name = "choice"><star/></set></think>
+            <condition name = "choice">
+                <li value = "YES"><think><set name = "topic">assessment</set></think><srai>YES</srai></li>
+                <li value = "NO"><think><set name = "topic"></set></think>Well, what can I assist you with?</li>
+                <li>Please type YES or NO</li>
+            </condition>
+        </template>
+    </category>
+    </topic>
+
+    <category>
+        <pattern>HOW ARE YOU #</pattern>
+        <template>
+            <think><set name = "topic">greeting</set></think>
+            I'm great. How about you?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>HOW R U #</pattern>
+        <template><srai>HOW ARE YOU #</srai></template>
+    </category>
+
+    <topic name = "greeting">
+        <category>
+            <pattern>I'M *</pattern>
+            <template>
+                <think><set name = "topic"></set></think>
+                That's good to here.<split/>
+                I'm Brooke, Fields University's virtual career advisor. How can I assist you today?
+                If you seek advice on career options, please type <b>CAREER.</b>
+            </template>
+        </category>
+
+        <category>
+            <pattern>I AM *</pattern>
+            <template>
+                That's good to here.<split/>
+                I'm Brooke, Fields University's virtual career advisor. How can I assist you today?
+                If you seek advice on career options, please type <b>CAREER.</b>
+            </template>
+        </category>
+    </topic>
+    
+    <!-- Learn Functions -->
+    
+    <category>
+        <pattern>I LIKE *</pattern>
+        <template>
+            Me, too. I like <star/> as well.
+        <think>
+            <learn>
+                <category>
+                    <pattern>WHAT DO I LIKE</pattern>
+                    <template>You like <eval><star/></eval>.</template>
+                </category>
+            </learn>
+        </think>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>I LOVE *</pattern>
+        <template>
+            Me, too. I like <star/> as well.
+        <think>
+            <learn>
+                <category>
+                    <pattern>WHAT DO I LOVE</pattern>
+                    <template>You love <eval><star/></eval>.</template>
+                </category>
+            </learn>
+        </think>
+        </template>
+    </category>
+    
+</aiml>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="475.0" prefWidth="800.0" style="-fx-background-color: #373e43;" stylesheets="@dark_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DeleteApptmtController">
+   <children>
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#ffffff00" height="360.0" layoutX="25.0" layoutY="85.0" stroke="LIGHTGRAY" strokeType="INSIDE" width="750.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="85.0" />
+      <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="665.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="TOP_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" text="APPOINTMENTS">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="25.0" top="15.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="37.0" prefWidth="200.0" spacing="230.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: #373e43;" text="Search">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="1.0" left="3.0" right="3.0" top="1.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" style="-fx-background-color: #373e43;" text="Search for an Appointment Using Field Below" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="1.0" left="3.0" right="3.0" top="6.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </HBox>
+            <TextField fx:id="searchTxt" alignment="TOP_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="700.0" promptText="Enter Search Field Here">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="50.0" right="50.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <HBox prefHeight="40.0" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="580.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionSearch" prefHeight="35.0" prefWidth="85.0" text="SEARCH">
+                     <HBox.margin>
+                        <Insets left="660.0" top="3.0" />
+                     </HBox.margin></Button>
+               </children>
+               <VBox.margin>
+                  <Insets right="50.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="37.0" prefWidth="200.0" spacing="345.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: #373e43;" text="Delete">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="1.0" left="3.0" right="3.0" top="1.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: #373e43;" text="Select an Appointment to Delete" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="1.0" left="3.0" right="3.0" top="6.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="45.0" />
+               </VBox.margin>
+            </HBox>
+            <Pane fx:id="apptmtsByCustList" layoutX="40.0" layoutY="332.0" prefHeight="150.0" prefWidth="200.0">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="5.0" />
+               </VBox.margin>
+               <children>
+                  <TableView fx:id="apptmtsTbl" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="700.0">
+                     <columns>
+                        <TableColumn fx:id="apptmtIDCol" editable="false" maxWidth="100.0" prefWidth="32.0" text=" ID" />
+                        <TableColumn fx:id="userNameCol" editable="false" prefWidth="119.0" text="Consultant" />
+                        <TableColumn fx:id="contactCol" editable="false" minWidth="6.0" prefWidth="137.0" text="Contact" />
+                        <TableColumn fx:id="locationCol" editable="false" prefWidth="114.0" text="Location" />
+                        <TableColumn fx:id="typeCol" editable="false" prefWidth="95.0" text="Type" />
+                        <TableColumn fx:id="startCol" editable="false" prefWidth="88.0" text="Start" />
+                        <TableColumn fx:id="endCol" editable="false" prefWidth="114.0" text="End" />
+                     </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <HBox prefHeight="40.0" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionDelApptmt" prefHeight="35.0" prefWidth="85.0" text="DELETE" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="580.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionCancel" prefHeight="35.0" prefWidth="85.0" text="CANCEL" />
+               </children>
+               <VBox.margin>
+                  <Insets right="50.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="565.0" top="3.0" />
+               </padding>
+            </HBox>
+         </children></VBox>
+   </children>
+</AnchorPane>

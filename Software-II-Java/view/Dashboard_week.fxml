@@ -1,0 +1,1278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1250.0" style="-fx-background-color: #373e43;" stylesheets="@dark_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Dashboard_weekController">
+   <children>
+      <StackPane layoutX="70.0" layoutY="50.0" AnchorPane.bottomAnchor="281.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="-55.0">
+         <children>
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#d3d3d300" height="265.0" stroke="LIGHTGRAY" strokeType="INSIDE" styleClass="titulo" width="1110.0" />
+         </children>
+      </StackPane>
+      <StackPane layoutX="69.5" layoutY="344.0" AnchorPane.bottomAnchor="138.0" AnchorPane.leftAnchor="69.5" AnchorPane.rightAnchor="69.5" AnchorPane.topAnchor="324.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="LIGHTGRAY" height="55.0" stroke="LIGHTGRAY" strokeType="INSIDE" width="1110.0">
+               <StackPane.margin>
+                  <Insets top="-145.0" />
+               </StackPane.margin>
+            </Rectangle>
+            <Group>
+               <children>
+                  <Group layoutX="155.0" layoutY="120.0">
+                     <children>
+                        <Line endY="149.0" stroke="LIGHTGRAY" />
+                        <Line endY="149.0" layoutX="158.0" stroke="LIGHTGRAY" />
+                        <Line endY="149.0" layoutX="316.0" stroke="LIGHTGRAY" />
+                        <Line endY="149.0" layoutX="474.0" stroke="LIGHTGRAY" />
+                        <Line endY="149.0" layoutX="632.0" stroke="LIGHTGRAY" />
+                        <Line endY="149.0" layoutX="790.0" stroke="LIGHTGRAY" />
+                     </children>
+                  </Group>
+                  <Line endX="1110.0" layoutY="102.0" stroke="#373e43" />
+               </children>
+               <StackPane.margin>
+                  <Insets left="8.0" top="30.0" />
+               </StackPane.margin>
+            </Group>
+         </children>
+      </StackPane>
+      <VBox alignment="CENTER" layoutX="1.0" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="DASHBOARD" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label text="Customers">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="450.0" spacing="20.0">
+                           <children>
+                              <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionAddCustomer" prefHeight="40.0" prefWidth="110.0" text="ADD" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionUpdateCustomer" prefHeight="40.0" prefWidth="110.0" text="UPDATE" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="110.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionDelCustomer" prefHeight="40.0" prefWidth="110.0" text="DELETE" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label text="Appointments">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="450.0" spacing="20.0">
+                           <children>
+                              <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionAddApptmt" prefHeight="40.0" prefWidth="110.0" text="ADD" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionUpdateApptmt" prefHeight="40.0" prefWidth="110.0" text="UPDATE" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="110.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionDelApptmt" prefHeight="40.0" prefWidth="110.0" text="DELETE" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0">
+               <children>
+                  <Label text="Reports">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionDailyApptmtLog" prefHeight="40.0" prefWidth="250.0" text="DAILY APPOINTMENTS" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionApptmtTypeLog" prefHeight="40.0" prefWidth="250.0" text="APPOINTMENT TYPES" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionConsultSchedLog" prefHeight="40.0" prefWidth="250.0" text="CONSULTANT SCHEDULES" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionLogFiles" prefHeight="40.0" prefWidth="250.0" text="LOG FILES" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="1110.0" style="-fx-border-color: lightgray;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="157.5" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="157.5" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="157.5" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="157.5" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="157.5" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="157.5" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="157.5" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="28.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="150.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="50.0" right="50.0" top="30.0" />
+               </VBox.margin>
+               <children>
+                  <Label fx:id="monthLbl" alignment="CENTER" contentDisplay="CENTER" style="-fx-text-fill: #3c3c3c;" text="APRIL" textAlignment="CENTER" GridPane.columnSpan="7" GridPane.halignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="yearLbl2" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" layoutX="265.0" layoutY="8.0" style="-fx-text-fill: #3c3c3c;" text="2020" textAlignment="RIGHT" GridPane.columnIndex="6">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="110.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="yearLbl1" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" style="-fx-text-fill: #3c3c3c;" text="2020" textAlignment="RIGHT">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="TOP" style="-fx-text-fill: #373e43;;" text="SUNDAY" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="2.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER" style="-fx-text-fill: #373e43;;" text="MONDAY" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets top="2.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" style="-fx-text-fill: #373e43;;" text="TUESDAY" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets top="2.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" style="-fx-text-fill: #373e43;;" text="WEDNESDAY" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="2.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER" style="-fx-text-fill: #373e43;;" text="THURSDAY" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets top="2.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" style="-fx-text-fill: #373e43;;" text="FRIDAY" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="2.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER" style="-fx-text-fill: #373e43;;" text="SATURDAY" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets top="2.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Lbl1" text="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="125.0" left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="Lbl2" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="125.0" left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="Lbl3" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="125.0" left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="Lbl4" text="4" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="125.0" left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="Lbl5" text="5" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="125.0" left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="Lbl6" text="6" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="125.0" left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="Lbl7" text="7" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="125.0" left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="135.0" spacing="17.0" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                     <children>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="95.0">
+                           <children>
+                              <Label fx:id="time1of1" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time2of1" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time3of1" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time4of1" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time5of1" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time6of1" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="25.0">
+                           <children>
+                              <Hyperlink fx:id="apptmtID1of1" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID1of1" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID2of1" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID2of1" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID3of1" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID3of1" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID4of1" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID4of1" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID5of1" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID5of1" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID6of1" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID6of1" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                           </children>
+                        </VBox>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="10.0" top="22.0" />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="135.0" spacing="17.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="95.0">
+                           <children>
+                              <Label fx:id="time1of2" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time2of2" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time3of2" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time4of2" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time5of2" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time6of2" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="25.0">
+                           <children>
+                              <Hyperlink fx:id="apptmtID1of2" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID1of2" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID2of2" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID2of2" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID3of2" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID3of2" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID4of2" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID4of2" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID5of2" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID5of2" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID6of2" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID6of2" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                           </children>
+                        </VBox>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="10.0" top="22.0" />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="135.0" spacing="17.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <children>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="95.0">
+                           <children>
+                              <Label fx:id="time1of3" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time2of3" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time3of3" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time4of3" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time5of3" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time6of3" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="25.0">
+                           <children>
+                              <Hyperlink fx:id="apptmtID1of3" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID1of3" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID2of3" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID2of3" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID3of3" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID3of3" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID4of3" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID4of3" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID5of3" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID5of3" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID6of3" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID6of3" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                           </children>
+                        </VBox>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="10.0" top="22.0" />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="135.0" spacing="17.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <children>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="95.0">
+                           <children>
+                              <Label fx:id="time1of4" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time2of4" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time3of4" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time4of4" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time5of4" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time6of4" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="25.0">
+                           <children>
+                              <Hyperlink fx:id="apptmtID1of4" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID1of4" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID2of4" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID2of4" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID3of4" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID3of4" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID4of4" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID4of4" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID5of4" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID5of4" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID6of4" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID6of4" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                           </children>
+                        </VBox>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="10.0" top="22.0" />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="135.0" spacing="17.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <children>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="95.0">
+                           <children>
+                              <Label fx:id="time1of5" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time2of5" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time3of5" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time4of5" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time5of5" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time6of5" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="25.0">
+                           <children>
+                              <Hyperlink fx:id="apptmtID1of5" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID1of5" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID2of5" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID2of5" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID3of5" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID3of5" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID4of5" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID4of5" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID5of5" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID5of5" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID6of5" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID6of5" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                           </children>
+                        </VBox>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="10.0" top="22.0" />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="135.0" spacing="17.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <children>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="95.0">
+                           <children>
+                              <Label fx:id="time1of6" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time2of6" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time3of6" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time4of6" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time5of6" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time6of6" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="25.0">
+                           <children>
+                              <Hyperlink fx:id="apptmtID1of6" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID1of6" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID2of6" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID2of6" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID3of6" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID3of6" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID4of6" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID4of6" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID5of6" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID5of6" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID6of6" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID6of6" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                           </children>
+                        </VBox>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="10.0" top="22.0" />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="135.0" spacing="17.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                     <children>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="95.0">
+                           <children>
+                              <Label fx:id="time1of7" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time2of7" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time3of7" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time4of7" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time5of7" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="time6of7" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="90.0" style="-fx-text-fill: darkgray;" text="Time" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="25.0">
+                           <children>
+                              <Hyperlink fx:id="apptmtID1of7" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID1of7" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID2of7" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID2of7" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID3of7" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID3of7" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID4of7" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID4of7" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID5of7" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID5of7" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                              <Hyperlink fx:id="apptmtID6of7" alignment="TOP_LEFT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionapptmtID6of7" prefHeight="20.0" prefWidth="25.0" style="-fx-text-fill: darkgray;" text="ID" textAlignment="RIGHT" underline="true" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-2.0" />
+                                 </padding>
+                              </Hyperlink>
+                           </children>
+                        </VBox>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="10.0" top="22.0" />
+                     </GridPane.margin>
+                  </HBox>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER" prefHeight="35.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onActionLeftBtn">
+                     <graphic>
+                        <Polygon fill="GREY" points="-50.0, -45.0, -62.0, -57.0, -50.0, -69.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="445.0" />
+                     </HBox.margin>
+                  </Button>
+                    <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionWeek" prefHeight="35.0" prefWidth="80.0" selected="true" text="By Week">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="weekMonthTG" />
+                     </toggleGroup>
+                    </ToggleButton>
+                    <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionMonth" prefHeight="35.0" prefWidth="80.0" text="By Month" toggleGroup="$weekMonthTG">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                    </ToggleButton>
+                  <Button mnemonicParsing="false" onAction="#onActionRightBtn">
+                     <graphic>
+                        <Polygon fill="GREY" points="-50.0, -45.0, -37.0, -57.0, -50.0, -69.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="445.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <Hyperlink onAction="#onActionLogout" style="-fx-text-fill: lightgray;" text="Log Out">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </Hyperlink>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets top="20.0" />
+   </padding>
+</AnchorPane>

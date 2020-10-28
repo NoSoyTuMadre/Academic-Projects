@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" minWidth="450.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="470.0" style="-fx-background-color: #373e43; -fax-accent: #1e74c6;" stylesheets="@dark_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <VBox alignment="TOP_CENTER">
+         <children>
+            <Label fx:id="newLbl" text="New User?" textAlignment="CENTER">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Label>
+            <Hyperlink fx:id="requestLbl" onAction="#onActionNewUser" style="-fx-text-fill: lightgray;" text="Request Access">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Hyperlink>
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </VBox>
+      <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@white-lock-icon.png" />
+         </image>
+         <VBox.margin>
+            <Insets bottom="35.0" top="40.0" />
+         </VBox.margin>
+      </ImageView>
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Label fx:id="usernameLbl" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="160.0" text="Username" textAlignment="RIGHT">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameTxt" promptText="Username">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Label fx:id="passwordLbl" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="160.0" text="Password" textAlignment="RIGHT">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordTxt" promptText="Password">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </PasswordField>
+         </children>
+      </HBox>
+      <Button fx:id="loginLbl" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionLogin" prefWidth="135.0" style="-fx-accent: #1e74c6; -fx-base: #373e43;" stylesheets="@dark_style.css" text="Log In" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="15.0" top="15.0" />
+         </VBox.margin>
+      </Button>
+      <VBox alignment="TOP_CENTER">
+         <children>
+            <Label fx:id="problemsLbl" text="Problems Logging In?" textAlignment="CENTER">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="phoneLbl" text="1-800-COMPANY">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets bottom="15.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+</VBox>

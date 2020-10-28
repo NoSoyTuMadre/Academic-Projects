@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="645.0" prefWidth="700.0" style="-fx-background-color: #373e43;" stylesheets="@dark_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateCustomerController">
+   <children>
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#ffffff00" height="275.0" layoutX="25.0" layoutY="345.0" stroke="LIGHTGRAY" strokeType="INSIDE" width="650.0" />
+      <VBox prefHeight="600.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="200.0" spacing="135.0">
+               <children>
+                  <Label alignment="TOP_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" text="CUSTOMERS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" text="Select a Customer to Update Below">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <TableView fx:id="customersTbl" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onMouseClickPopulateFields" prefHeight="235.0" prefWidth="640.0">
+               <columns>
+                  <TableColumn fx:id="colID" maxWidth="100.0" prefWidth="32.0" text="ID" />
+                  <TableColumn fx:id="colName" prefWidth="128.0" text="Name" />
+                  <TableColumn fx:id="colAddress" minWidth="6.0" prefWidth="191.0" text="Address" />
+                  <TableColumn fx:id="colCity" prefWidth="115.0" text="City &amp; State" />
+                  <TableColumn fx:id="colZip" prefWidth="70.0" text="Zip Code" />
+                  <TableColumn fx:id="colCountry" prefWidth="103.0" text="Country" />
+               </columns>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox prefHeight="37.0" prefWidth="200.0" spacing="285.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: #373e43;" text="Update">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="1.0" left="3.0" right="1.0" top="3.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" style="-fx-background-color: #373e43;" text="Update Using Fields Below" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="1.0" left="3.0" right="3.0" top="6.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="45.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <GridPane alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="600.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="81.0" />
+                  <ColumnConstraints maxWidth="255.0" minWidth="180.0" prefWidth="200.0" />
+                  <ColumnConstraints maxWidth="162.0" minWidth="10.0" prefWidth="119.0" />
+                  <ColumnConstraints maxWidth="200.0" minWidth="134.0" prefWidth="200.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0" text="First Name" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <TextField fx:id="firstName" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="125.0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="25.0" text="MI">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="midInitial" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="40.0" />
+                     </children>
+                  </HBox>
+                  <Label text="Last Name" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="lastName" GridPane.columnIndex="3">
+                     <GridPane.margin>
+                        <Insets left="-30.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Address" GridPane.rowIndex="1" />
+                  <TextField fx:id="address" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="-20.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label contentDisplay="RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0" text="City" textAlignment="RIGHT" GridPane.rowIndex="3" />
+                  <TextField fx:id="city" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="-48.0" right="30.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <HBox spacing="10.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <children>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="45.0" text="State">
+                           <HBox.margin>
+                              <Insets left="-10.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="10.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox fx:id="statesCB" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="77.0" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="-20.0" />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <children>
+                        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="65.0" text="Country" textAlignment="RIGHT">
+                           <padding>
+                              <Insets left="10.0" top="5.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="country" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="-20.0" />
+                     </GridPane.margin>
+                  </HBox>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="65.0" text="Zip Code" GridPane.rowIndex="4" />
+                  <TextField fx:id="zipCode" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="-10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Phone" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="phoneTxt" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="-57.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Address 2" GridPane.rowIndex="2" />
+                  <TextField fx:id="address2" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="-10.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </GridPane>
+            <HBox prefHeight="40.0" prefWidth="200.0" spacing="17.0">
+               <children>
+                  <CheckBox fx:id="isActiveCheck" mnemonicParsing="false" selected="true" text="Make Active?">
+                     <HBox.margin>
+                        <Insets right="279.0" top="8.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionUpdateCust" prefHeight="35.0" prefWidth="85.0" text="UPDATE" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="580.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionCancel" prefHeight="35.0" prefWidth="85.0" text="CANCEL" />
+               </children>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="15.0" />
+               </VBox.margin>
+            </HBox>
+         </children></VBox>
+   </children>
+</AnchorPane>

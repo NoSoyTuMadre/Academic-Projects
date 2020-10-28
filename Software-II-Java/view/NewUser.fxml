@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" minWidth="450.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="450.0" prefWidth="450.0" style="-fx-background-color: #373e43; -fax-accent: #1e74c6;" stylesheets="@dark_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewUserController">
+   <children>
+      <Label text="Access Request">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="20.0" top="10.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="160.0" text="Username" textAlignment="RIGHT">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameTxt" promptText="Enter a Username">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="160.0" text="Password" textAlignment="RIGHT">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordTxt" promptText="Enter a Password">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </PasswordField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="221.0" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="160.0" text="Confirm Password" textAlignment="RIGHT">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordConfirmTxt" promptText="Re-Enter Password">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </PasswordField>
+         </children>
+      </HBox>
+      <HBox spacing="20.0">
+         <VBox.margin>
+            <Insets left="55.0" top="10.0" />
+         </VBox.margin>
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" defaultButton="true" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionNewUser" prefWidth="165.0" style="-fx-accent: #1e74c6; -fx-base: #373e43;" stylesheets="@dark_style.css" text="Request Access" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionCancel" prefWidth="165.0" style="-fx-accent: #1e74c6; -fx-base: #373e43;" stylesheets="@dark_style.css" text="Cancel" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <VBox alignment="TOP_CENTER">
+         <children>
+            <Label text="Questions?" textAlignment="CENTER">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="1-800-COMPANY">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</VBox>
