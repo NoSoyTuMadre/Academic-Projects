@@ -1,3 +1,3 @@
-##Data Structures & Algorithms II - Package Delivery App:
+# Data Structures & Algorithms II - Package Delivery App:
 #
 Using PyCharm and Python, I created a package delivery application that extracts and formats data from three CSV files (one with location information, one with package information, and one with distance information) into a usable format. The information from these files were used to create the class structures throughout the app. A command-line user interface was utilized to allow a user to view the current status and/or package details of one or all packages. A custom hash table class and a K-nearest neighbor algorithm was incorporated for optimization, based on shortest total mileage traveled by all trucks.
